@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Solution
+{
+public:
+    string removeDuplicates(string s)
+    {
+        string res = "";
+        for (char c : s)
+        {
+            if (!res.empty() && res.back() == c)
+            {
+                res.pop_back();
+            }
+            else
+            {
+                res.push_back(c);
+            }
+        }
+        return res;
+    }
+};
+
+int main()
+{
+    Solution sol;
+    cout << "Result: " << sol.removeDuplicates("abbaca") << "\n";
+    return 0;
+}
